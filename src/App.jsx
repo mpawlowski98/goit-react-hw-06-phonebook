@@ -27,13 +27,13 @@ export const App = () => {
     dispatch(deleteContact(id));
   };
 
-  const getFilterContacts = () => {
-    return contacts.filter(({ name }) => {
-      name.toLowerCase().includes(filter.toLowerCase());
-    });
+  const getFilteredContacts = () => {
+    return contacts.filter(({ name }) =>
+      name.toLowerCase().includes(filter.toLowerCase())
+    );
   };
 
-  const filteredContacts = getFilterContacts();
+  const filteredContacts = getFilteredContacts();
   return (
     <div>
       <h1>Phonebook</h1>
