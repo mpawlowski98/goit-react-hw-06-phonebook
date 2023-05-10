@@ -4,7 +4,7 @@ import Filter from 'components/Filter';
 import { useSelector } from 'react-redux';
 import {
   addContact,
-  deleteContacts,
+  deleteContact,
   selectContacts,
   selectFilter,
   setFilter,
@@ -24,7 +24,7 @@ export const App = () => {
     dispatch(setFilter(e.target.value));
   };
   const handleDeleteContact = id => {
-    dispatch(deleteContacts(id));
+    dispatch(deleteContact(id));
   };
 
   const getFilterContacts = () => {

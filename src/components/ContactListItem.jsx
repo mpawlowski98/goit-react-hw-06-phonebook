@@ -1,12 +1,11 @@
 import { useDispatch } from 'react-redux';
-import { deleteContacts } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/contactsSlice';
 
 function ContactListItem({ name, number, id }) {
   const dispatch = useDispatch();
   const handleDelete = () => {
-    dispatch(deleteContacts(id));
+    dispatch(deleteContact(id));
   };
-
   return (
     <li>
       {name}: {number}
