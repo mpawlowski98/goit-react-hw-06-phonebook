@@ -1,5 +1,3 @@
-import { nanoid } from 'nanoid';
-
 const { createSlice } = require('@reduxjs/toolkit');
 
 const initialState = {
