@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { selectContacts } from 'redux/contactsSlice';
 import { useSelector } from 'react-redux';
 import css from 'App.module.css';
-
 function ContactForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -70,7 +69,9 @@ function ContactForm({ onSubmit }) {
         />
       </label>
 
-      <button type="submit">Add contact</button>
+      <button className={css.addContact} type="submit">
+        Add contact
+      </button>
     </form>
   );
 }
