@@ -8,13 +8,19 @@ import {
   selectContacts,
   selectFilter,
   setFilter,
+  loadContacts,
 } from 'redux/contactsSlice';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 export const App = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadContacts());
+  }, [dispatch]);
 
   const handleSubmit = contact => {
     dispatch(addContact(contact));
@@ -28,9 +34,11 @@ export const App = () => {
   };
 
   const getFilteredContacts = () => {
-    return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(filter.toLowerCase())
-    );
+    if (filter) {
+      return contacts.filter(({ name }) =>
+        name.toLowerCase().includes(filter.toLowerCase())
+      );
+    }
   };
 
   const filteredContacts = getFilteredContacts();
