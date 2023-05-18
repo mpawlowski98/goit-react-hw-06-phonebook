@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { selectContacts } from 'redux/contactsSlice';
 import { useSelector } from 'react-redux';
 import css from 'App.module.css';
+
 function ContactForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -40,14 +41,6 @@ function ContactForm({ onSubmit }) {
     setName('');
     setNumber('');
   };
-  // const saveContactsToLocalStorage = contacts => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // };
-
-  // const handleSubmitWithLocalStorage = contact => {
-  //   onSubmit(contact);
-  //   saveContactsToLocalStorage([...contacts, contact]); // Zapisujemy kontakt do localStorage
-  // };
 
   return (
     <form onSubmit={handleSubmit} className={css.contactForm}>
